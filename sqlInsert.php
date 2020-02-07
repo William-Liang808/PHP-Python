@@ -4,12 +4,12 @@
 //require 'errorHandler.php';
 
 $servername = "localhost";
-$username = "willia20";
-$password = "liang";
-$dbname = "willia20";
+$username = "user";
+$password = "password";
+$dbname = "students";
 //have to use single quote for variable
 $name = 'will';
-$age = 8;
+$age = 18;
 $gradeLevel = 12;
 
 //create connection
@@ -31,8 +31,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
-
-
-
 ?>
