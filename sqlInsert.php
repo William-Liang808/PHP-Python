@@ -6,7 +6,7 @@
 $servername = "localhost";
 $username = "user";
 $password = "password";
-$dbname = "students";
+$dbname = "school";
 //have to use single quote for variable
 $name = 'will';
 $age = 18;
