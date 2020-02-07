@@ -1,9 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "willia20";
-$password = "liang";
-$dbname = "willia20";
-$name = "Cole house";
+$username = "user";
+$password = "password";
+$dbname = "students";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -12,7 +11,7 @@ if($conn->connect_error){
     die("connection failed:".$conn->connect_error);
 }
 
-$sql = "SELECT*FROM students WHERE name ='Scam'";
+$sql = "SELECT*FROM students";
 $result =$conn->query($sql);
 
 if ($result->num_rows > 0) {
