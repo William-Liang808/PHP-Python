@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import time
 import MySQLdb
 
 import Adafruit_DHT
@@ -19,14 +19,11 @@ pin = 18
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
-# Note that sometimes you won't get a reading and
-# the results will be null (because Linux can't
-# guarantee the timing of calls to read the sensor).
-# If this happens try again! 
-
-sql = f"INSERT INTO humidity (temperature, humidity) VALUES ({temperature}, {humidity})"
-
-cursor.execute(sql) 
+while humidity !=0 and temperature !=0:
+	sql = f"INSERT INTO humidity (temperature, humidity) VALUES ({temperature}, {humidity})"
+	cursor.execute(sql) 
+	time.sleep(5)
 
 cursor.close()
 db.close()
+
